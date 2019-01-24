@@ -1,0 +1,32 @@
+package com.bridgelabz.functionality;
+/******************************************************************************
+ *  Purpose :To find the powers of 2 for the given user number
+ *  I/P     :command-line argument N number to find power of 2
+ *  O/P     : Generating the power of 2 values
+ *  @author  BridgeLabz/punithhr
+ *  @version 1.0
+ *  @since   23-01-2019
+ *******************************************************************************/
+public class PowerOf2 {
+
+	public static void main(String[] args) {
+	//Taking the user input by arguments to find the power of 2 till the number given
+	int pownumber=Integer.parseInt(args[0]);
+	//Validating the user input is greater than 31 and 0 
+	if(pownumber>0&&pownumber<31)
+	{
+		System.out.println("The power of 2 till "+pownumber+" are:");
+		//logic to find the power of 2
+		for(int i=1;i<=pownumber;i++)
+		{
+			//Displaying the Outputs
+			System.out.println(i*2);
+		}
+	}
+	else
+		//Displaying the error message to the user by validation
+		System.out.println("Enter the power number greater then 0 and less than 31");
+	
+	}
+
+}

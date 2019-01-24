@@ -1,0 +1,36 @@
+package com.bridgelabz.functionality;
+
+
+import com.bridgelabz.Utility.Utility;
+
+public class FlipCoin {
+	public static void main(String[] args)
+	{
+		System.out.println("Enter the number of times coin to flip");
+		double head=0,tail=0;
+		double tailpercentage=0,headpercentage=0;
+		int flipnum=Utility.getInt();
+		if(flipnum>0)
+		{
+		
+			for(int i=0;i<=flipnum;i++)
+			{
+			double randomnumber=Math.random();
+			if(randomnumber<0.5)
+			{
+				tail++;
+			}
+			else
+			{
+				head++;
+			}
+			}
+			tailpercentage=tail*100/flipnum; 
+			headpercentage=100.0-tailpercentage;
+			System.out.println("The percentage of Head vs Tail is: "+tailpercentage+" of "+headpercentage);
+		}
+		else
+			System.out.println("Enter the positive integers like 1 and 2 etc--");
+	}
+
+}

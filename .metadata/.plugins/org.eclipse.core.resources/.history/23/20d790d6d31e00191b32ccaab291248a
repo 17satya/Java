@@ -1,0 +1,22 @@
+package com.bridgelabz.functionality;
+
+import java.util.Scanner;
+
+import com.bridgelabz.Utility.Utility;
+
+public class StringReplace {
+
+	public static void main(String[] args) {
+		Scanner sc1= new Scanner(System.in);
+		System.out.println("Enter the username");
+		String name=sc1.next();
+		String template="Hello <<UserName>>, How are you?";
+		if(name.length()<3)
+		{
+			System.out.println("The username Should be more than three characters");;
+		}
+		String replacedString=template.replace("<<UserName>>",name);
+		System.out.println(replacedString);
+	}
+
+}

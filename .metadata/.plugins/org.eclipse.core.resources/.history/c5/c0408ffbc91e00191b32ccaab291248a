@@ -1,0 +1,17 @@
+package com.bridgelabz.Utility;
+
+
+
+public class Utility {
+	
+	public static String replaceString(String name)
+	{
+		String template="Hello <<UserName>>, How are you?";
+		if(name.length()<3)
+		{
+			return "The username Should be more then three characters";
+		}
+		return template.replace("<<UserName>>","name");
+	}
+
+}

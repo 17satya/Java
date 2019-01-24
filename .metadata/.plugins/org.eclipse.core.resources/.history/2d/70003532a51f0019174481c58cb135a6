@@ -1,0 +1,26 @@
+package com.bridgelabz.functionality;
+
+import com.bridgelabz.Utility.Utility;
+
+public class TwoDimensionArray {
+	public static void main(String[] args)
+	{
+		System.out.println("Enter the number of rows in an array");
+		int row=Utility.getInt();
+		System.out.println("Enter the number of columns in an array");
+		int column=Utility.getInt();
+		int[][] twodarr=new int[row][column];
+		for(int i=0;i<row;i++)
+		{
+			for(int j=0;j<i;j++)
+			{
+				System.out.println("Enter the integer element for row ");
+				twodarr[i][j]=Utility.getInt();
+				System.out.println("Enter the integer element for column");
+				twodarr[i][j]=Utility.getInt();
+			}
+		}
+		System.out.println(twodarr);
+	}
+
+}

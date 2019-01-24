@@ -1,0 +1,12 @@
+package com.bridgelabz.functionality;
+
+public class Distance {
+
+	public static void main(String[] args) {
+		int from=Integer.parseInt(args[0]);
+		int to=Integer.parseInt(args[1]);
+		Double Distance=Math.pow(from, to);
+		System.out.println(Distance);
+	}
+
+}

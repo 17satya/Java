@@ -1,0 +1,20 @@
+package com.bridgelabz.functionality;
+
+public class PowerOf2 {
+
+	public static void main(String[] args) {
+	int pownumber=Integer.parseInt(args[0]);
+	if(pownumber>0&&pownumber<31)
+	{
+		System.out.println("The power of 2 till "+pownumber+" are:");
+		for(int i=1;i<=pownumber;i++)
+		{
+			System.out.println(i*2);
+		}
+	}
+	else
+		System.out.println("Enter the power number greater then 0 and less than 31");
+	
+	}
+
+}

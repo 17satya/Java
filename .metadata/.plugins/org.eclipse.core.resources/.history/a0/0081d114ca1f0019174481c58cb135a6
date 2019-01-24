@@ -1,0 +1,22 @@
+package com.bridgelabz.Utility;
+
+import java.util.Scanner;
+
+public class Utility {
+	
+	static Scanner sc1= new Scanner(System.in);
+	public static String getString()
+	{
+		String s=sc1.next();
+		return s;
+	}
+	public static int getInt()
+	{
+		int i=sc1.nextInt();
+		return i;
+	}
+	public static int getRandomNumber()
+	{
+		return (int)(Math.random()*10000);
+	}
+}

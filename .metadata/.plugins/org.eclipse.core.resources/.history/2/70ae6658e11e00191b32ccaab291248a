@@ -1,0 +1,19 @@
+package com.bridgelabz.functionality;
+
+import com.bridgelabz.Utility.Utility;
+
+public class HarmonicNumber {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the nth number to find harmonic number");
+		int nthnum=Utility.getInt();
+		double sum=0.0;
+		for(int i=1;i<=nthnum;i++)
+		{
+			sum+=1.0/i;
+		}
+		System.out.println("The "+nthnum+" Harmonic number is:"+sum);
+
+	}
+
+}

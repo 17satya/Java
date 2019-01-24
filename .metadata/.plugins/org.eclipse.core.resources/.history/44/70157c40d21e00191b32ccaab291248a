@@ -1,0 +1,17 @@
+package com.bridgelabz.functionality;
+
+import java.util.Scanner;
+
+import com.bridgelabz.Utility.Utility;
+
+public class StringReplace {
+
+	public static void main(String[] args) {
+		Scanner sc1= new Scanner(System.in);
+		System.out.println("Enter the username");
+		String name=sc1.next();
+		String replacedstring=Utility.replaceString(name);
+	    System.out.println(replacedstring);
+	}
+
+}

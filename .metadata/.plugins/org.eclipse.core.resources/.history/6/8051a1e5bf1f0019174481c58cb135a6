@@ -1,0 +1,38 @@
+package com.bridgelabz.functionality;
+
+import com.bridgelabz.Utility.Utility;
+
+public class SumOfIntegerToZero {
+
+	public static void main(String[] args) {
+		System.out.println("Eneter the N elements to add in array ");
+		int arraysize=Utility.getInt();
+		int[] array=new int[arraysize];
+		int arrayelement;
+		int result=0;
+		String combinationnum="";
+		int i=0,j=1,k=2;
+		System.out.println("Enter the "+arraysize+" elements to array");
+		for(int l=0;l<array.length;l++)
+		{
+			array[l]=Utility.getInt();
+		}
+		for(i=j-1;i<array.length;i++)
+		{
+			for(j=k-1;j<array.length;j++)
+			{
+				for(k=2;k<array.length;k++)
+				{
+					if(array[i]+array[j]+array[k]==result)
+					{
+						combinationnum+=" "+array[i]+" "+array[j]+" "+array[k]+",";
+					}
+				}
+			}
+			
+		}
+		System.out.println("The Sum of Integer are"+combinationnum);
+
+	}
+
+}

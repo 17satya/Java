@@ -1,0 +1,27 @@
+package com.bridgelabz.functionality;
+
+import java.util.LinkedList;
+
+import com.bridgelabz.Utility.Utility;
+
+public class DistinctCoupon {
+
+	public static void main(String[] args)
+	{
+		System.out.println("Enter the number of Distinct Coupon required");
+		int generatedistinctnum=Utility.getInt();
+		LinkedList<Integer> distinctcouponelements=new LinkedList<Integer>();
+		int counttogeneratedistinctnum=0;
+		while(distinctcouponelements.size()<=generatedistinctnum)
+		{
+			int couponnum=Utility.getRandomNumber();
+			if(!distinctcouponelements.contains(couponnum))
+			{
+				distinctcouponelements.add(couponnum);
+				counttogeneratedistinctnum++;
+			}
+		}
+		System.out.println("The count to generate "+generatedistinctnum+" is "+counttogeneratedistinctnum+"and the distinct coupons are "+distinctcouponelements);
+		
+	}
+}

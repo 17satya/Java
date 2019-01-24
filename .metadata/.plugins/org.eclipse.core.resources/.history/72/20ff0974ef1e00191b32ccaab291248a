@@ -1,0 +1,25 @@
+package com.bridgelabz.functionality;
+
+import com.bridgelabz.Utility.Utility;
+
+public class LeapYear {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the year");
+        String year=Utility.getString();
+        if(year.length()==4)
+        {
+        	int yearname=Integer.parseInt(year);
+        	if(((yearname%4==0)||(yearname%100==0))&&(yearname%400==0))
+        	{
+        		System.out.println(+yearname+" year is a leap year");
+        	}
+        	else
+        	{
+        		System.out.println(+yearname+" year is not a leap year");
+        	}
+        }
+        System.out.println("Enter the correct year like 2010");
+	}
+
+}

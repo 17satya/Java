@@ -1,0 +1,27 @@
+package com.bridgelabz.functionality;
+
+import java.util.HashSet;
+
+
+import com.bridgelabz.Utility.Utility;
+
+public class DistinctCoupon {
+
+	public static void main(String[] args)
+	{
+		System.out.println("Enter the number of Distinct Coupon required");
+		int requiredCoupon=Utility.getInt();
+		HashSet<Integer> distinctcouponelements=new HashSet<Integer>();
+		int counttogeneratedistinctnum=0;
+		while( distinctcouponelements.size()<requiredCoupon)
+		{
+			
+			int couponnum=(int)(Math.random()*100000);
+			distinctcouponelements.add(couponnum);
+			counttogeneratedistinctnum++;
+			
+		}
+		System.out.println("The count to generate "+ requiredCoupon+" is "+counttogeneratedistinctnum+"and the distinct coupons are "+distinctcouponelements);
+		
+	}
+}

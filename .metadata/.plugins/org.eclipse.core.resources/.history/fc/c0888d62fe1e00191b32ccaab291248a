@@ -1,0 +1,23 @@
+package com.bridgelabz.functionality;
+
+import java.text.DecimalFormat;
+
+import com.bridgelabz.Utility.Utility;
+
+public class HarmonicNumber {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the nth number to find harmonic number");
+		int nthnum=Utility.getInt();
+		double sum=0.0;
+		for(int i=1;i<=nthnum;i++)
+		{
+			sum+=1.0/i;
+		}
+		DecimalFormat numberFormat=new DecimalFormat("#.00000");
+		System.out.println(numberFormat.format(sum));
+		System.out.println("The "+nthnum+" Harmonic number is:"+sum);
+
+	}
+
+}

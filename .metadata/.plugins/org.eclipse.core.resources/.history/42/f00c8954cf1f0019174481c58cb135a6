@@ -1,0 +1,42 @@
+package com.bridgelabz.functionality;
+
+import com.bridgelabz.Utility.Utility;
+
+public class Gambler {
+
+	public static void main(String[] args) {
+		
+		int win=0,loss=0,numberoftimes=0;;
+			System.out.println("Enter the initial $stake you have");
+			//Taking the user input to stake variable
+			int stake=Utility.getInt();
+			System.out.println("Enter the goal prize for the game");
+			//Taking the user input to goal variable
+			int goal=Utility.getInt();
+			//logic to find the number of wins and loss
+			 while (stake!= 0 && stake!= goal) 
+			 {
+				if(Math.random()<0.5)
+				{
+					loss++;
+					stake--;
+				}
+				else
+				{
+					win++;
+					stake++;
+				}
+				numberoftimes++;
+			}
+			 //finding the percentage of win
+			double percentageofwin=win*100.0/numberoftimes;
+			//finding the percentage of Loss
+			double percentageofloss=100.0-percentageofwin;
+			//Displaying the percentage of win
+			System.out.println("Enter the percentage of win "+percentageofwin);
+			//Displaying the percentage of loss
+			System.out.println("Enter the percentage of loss "+percentageofloss);		
+
+	}
+
+}

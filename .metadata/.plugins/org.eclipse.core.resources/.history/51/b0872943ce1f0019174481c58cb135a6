@@ -1,0 +1,37 @@
+package com.bridgelabz.functionality;
+
+import com.bridgelabz.Utility.Utility;
+/******************************************************************************
+ *  Purpose :
+ *  I/P     :
+ *  O/P     : 
+ *  @author  BridgeLabz/punithhr
+ *  @version 1.0
+ *  @since   23-01-2019
+ *******************************************************************************/
+
+public class PrimeFactor {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the number to Find the factor");
+		int findfactornum=Utility.getInt();
+		while(findfactornum%2==0)
+		{
+			System.out.println(2);
+			findfactornum=findfactornum/2;
+		}
+		for(int i=3;i<=findfactornum;i+=2)
+		{
+			if(findfactornum%i==0)
+			{
+				System.out.println(i);
+				findfactornum=findfactornum/i;
+			}
+		} 
+		if(findfactornum>2)
+		{
+			System.out.println(findfactornum);
+		}
+	}
+
+}

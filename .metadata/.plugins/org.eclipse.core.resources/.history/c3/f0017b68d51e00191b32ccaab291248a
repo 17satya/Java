@@ -1,0 +1,15 @@
+package com.bridgelabz.Utility;
+
+import java.util.Scanner;
+
+public class Utility {
+	
+	
+	public static String getString()
+	{
+		Scanner sc1= new Scanner(System.in);
+		String s=sc1.next();
+		return s;
+	}
+	
+}

@@ -1,0 +1,29 @@
+package com.bridgelabz.functionality;
+
+import com.bridgelabz.Utility.Utility;
+
+public class FactorOfNumber {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the number to Find the factor");
+		int findfactornum=Utility.getInt();
+		while(findfactornum%2==0)
+		{
+			System.out.println(2);
+			findfactornum=findfactornum/2;
+		}
+		for(int i=3;i<findfactornum;i+=2)
+		{
+			if(i%findfactornum==0)
+			{
+				System.out.println(i);
+				findfactornum=findfactornum/3;
+			}
+		} 
+		if(findfactornum>2)
+		{
+			System.out.println(findfactornum);
+		}
+	}
+
+}
