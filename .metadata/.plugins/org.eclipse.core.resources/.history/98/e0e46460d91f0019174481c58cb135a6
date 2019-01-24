@@ -29,10 +29,10 @@ public class DistinctCoupon {
 			int couponnum=Utility.getRandomNumber();
 			distinctcouponelements.add(couponnum);
 			numberofcounts++;
-
+			
 		}
 		//Displaying the count and distinct coupon to the user 
 		System.out.println("The count taken to generate "+ requiredCoupon+" distinct coupon  is "+numberofcounts+" and the distinct coupons are "+distinctcouponelements);
-
+		
 	}
 }

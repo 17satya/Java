@@ -1,0 +1,30 @@
+package com.bridgelabz.functionality;
+
+import java.util.Date;
+
+import com.bridgelabz.Utility.Utility;
+
+public class StopWatch {
+
+	public static void main(String[] args) {
+		System.out.println("Enter 0 to StartWatch time");
+		int start=Utility.getInt();
+		System.out.println("Enter 1 to StopWatch time");
+		int end=Utility.getInt();
+		int starting=0;
+		int ending=0;
+		int result;
+		if(start==0)
+		{
+		starting=(int)System.currentTimeMillis();
+		}
+		if(end==1)
+		{
+			ending=(int)System.currentTimeMillis();
+		}
+		result=ending-starting;
+		System.out.println("delay is"+result);
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.bridgelabz.functionality;
+
+import java.util.Date;
+
+public class StopWatch {
+
+	public static void main(String[] args) {
+		Date date=new Date();
+		System.out.println("Enter 0 to StartWatch time");
+		System.out.println(System.currentTimeMillis());
+		System.out.println("Enter 1 to StopWatch time");
+	}
+
+}
