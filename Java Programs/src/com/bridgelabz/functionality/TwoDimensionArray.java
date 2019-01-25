@@ -12,6 +12,7 @@ import com.bridgelabz.Utility.Utility;
 public class TwoDimensionArray {
 	public static void main(String[] args)
 	{
+		try {
 		System.out.println("Enter the number of rows in an array");
 		//Taking the user input for number of rows
 		int row=Utility.getInt();
@@ -40,6 +41,12 @@ public class TwoDimensionArray {
 				
 			}
 			System.out.println();
+		}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Enter the valid integers "+e.getMessage());
+			
 		}
 		
 	}

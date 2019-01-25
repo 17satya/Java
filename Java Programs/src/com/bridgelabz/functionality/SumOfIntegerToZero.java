@@ -1,5 +1,6 @@
 package com.bridgelabz.functionality;
 
+
 import com.bridgelabz.Utility.Utility;
 /******************************************************************************
  *  Purpose :To find the Distinct triplets of the user input numbers in a array.
@@ -12,17 +13,17 @@ import com.bridgelabz.Utility.Utility;
  *******************************************************************************/
 public class SumOfIntegerToZero {
 
+	
 	public static void main(String[] args) {
+		try
+		{
 		//Taking the inputs for the arraysize by the User
 		System.out.println("Eneter the N elements to add in array ");
 		int arraysize=Utility.getInt();
 		int[] array=new int[arraysize];
-		int arrayelement;
+		boolean triplet=false;
+		int countTriplets=0;
 		//To hold the triplet number values which results to zero 
-		String combinationnum="";
-		int countcombination=0;
-		//Declaring the values for the i,j variables 
-		int i=0,j=1,k=2;
 		System.out.println("Enter the "+arraysize+" elements to array");
 		for(int l=0;l<array.length;l++)
 		{
@@ -30,24 +31,40 @@ public class SumOfIntegerToZero {
 			array[l]=Utility.getInt();
 		}
 		//Logic to find the combination of the triplet number in the array elements and count
-		for(i=j-1;i<array.length;i++)
+		for(int i=0;i<array.length-2;i++)
 		{
-			for(j=k-1;j<array.length;j++)
+			for(int j=i+1;j<array.length-1;j++)
 			{
-				for( k=2;k<array.length;k++)
+				for(int k=j+1;k<array.length;k++)
 				{
 					if(array[i]+array[j]+array[k]==0)
 					{
-						combinationnum+=" "+array[i]+" "+array[j]+" "+array[k]+",";
-						countcombination++;
+						System.out.print(+array[i]+",");
+						System.out.print(+array[j]+",");
+						System.out.print(+array[k]+",");
+						System.out.println();
+						triplet=true;
+						countTriplets++;
 					}
 				}
 			}
 			
 		}
-		//displaying the output to the user
-		System.out.println("The count of combination is"+countcombination+" and combination are"+combinationnum);
-
+		//Displaying ewather it contains triplets count or not
+		if(triplet==false)
+		{
+			System.out.println("There are no sum of 3 Integer triplets to"+countTriplets);
+		}
+		else 
+		{
+			System.out.print("The count of triplets is "+countTriplets);
+		}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Enter the valid integers"+e.getMessage());
+		}
+		
 	}
 
 }
