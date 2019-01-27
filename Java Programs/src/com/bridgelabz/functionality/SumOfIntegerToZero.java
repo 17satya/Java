@@ -23,6 +23,9 @@ public class SumOfIntegerToZero {
 		int[] array=new int[arraysize];
 		boolean triplet=false;
 		int countTriplets=0;
+		//validating the array length greater than 2 or not because length is less than 2 means checking of triplets is not necessary
+		if(array.length>2)
+		{
 		//To hold the triplet number values which results to zero 
 		System.out.println("Enter the "+arraysize+" elements to array");
 		for(int l=0;l<array.length;l++)
@@ -39,9 +42,9 @@ public class SumOfIntegerToZero {
 				{
 					if(array[i]+array[j]+array[k]==0)
 					{
-						System.out.print(+array[i]+",");
-						System.out.print(+array[j]+",");
-						System.out.print(+array[k]+",");
+						System.out.print(+array[i]+" ");
+						System.out.print(+array[j]+" ");
+						System.out.print(+array[k]+" ");
 						System.out.println();
 						triplet=true;
 						countTriplets++;
@@ -50,7 +53,7 @@ public class SumOfIntegerToZero {
 			}
 			
 		}
-		//Displaying ewather it contains triplets count or not
+		//Displaying weather it contains triplets count or not
 		if(triplet==false)
 		{
 			System.out.println("There are no sum of 3 Integer triplets to"+countTriplets);
@@ -60,9 +63,12 @@ public class SumOfIntegerToZero {
 			System.out.print("The count of triplets is "+countTriplets);
 		}
 		}
+		else
+			System.out.println("the N numbers should be greater than 2 ");
+		}
 		catch(Exception e)
 		{
-			System.out.println("Enter the valid integers"+e.getMessage());
+			System.out.println("Enter the valid integers");
 		}
 		
 	}
