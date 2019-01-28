@@ -1,10 +1,12 @@
 package com.bridgelabz.Utility;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 /******************************************************************************
  *  Purpose :To generate the resuable methods
  *  @author  BridgeLabz/punithhr
@@ -12,7 +14,7 @@ import java.util.Scanner;
  *  @since   23-01-2019
  *******************************************************************************/
 public class Utility {
-
+	
 	static Scanner sc1= new Scanner(System.in);
 	//Getting the user String values inputs by user using scanner
 	public static String getString()
@@ -24,6 +26,12 @@ public class Utility {
 	public static int getInt()
 	{
 		int i=sc1.nextInt();
+		return i;
+	}
+	//Getting the user double number inputs by user using scanner
+	public static double getDouble()
+	{
+		double i=sc1.nextDouble();
 		return i;
 	}
 	//Getting the integer random number in this below method() 
@@ -73,9 +81,8 @@ public class Utility {
 	{
 		int i=0;
 		int num=0;
-		//Empty String
+		//Empty ArrayList
 		ArrayList primeNumbers=new ArrayList();
-		//String  primeNumbers="";
 		for (i=1;i<=range;i++)   
 		{ 	//counter for calculating the counts of dividing  	  
 			int counter=0; 	  
@@ -96,9 +103,9 @@ public class Utility {
 		return primeNumbers;
 	}
 	//this method gives the PrimeAnagram palindrome values
-	public static LinkedHashSet getPrimeAnagramPalindrome(ArrayList prime)
+	public static TreeSet getPrimeAnagramPalindrome(ArrayList prime)
 	{
-		LinkedHashSet set=new LinkedHashSet();
+		TreeSet set=new TreeSet();
 		//This is the Loop for finding the Palindrome values
 		for(int i=0;i<prime.size();i++)
 		{
@@ -145,7 +152,7 @@ public class Utility {
 	//checks the Anagram of the two Strings and returns boolean
 	public static boolean isAnagram(String s1,String s2)
 	{  
-		HashSet Set=new HashSet();
+		TreeSet Set=new TreeSet();
 
 		if(s1.trim().length()==s2.trim().length())
 		{
@@ -167,6 +174,244 @@ public class Utility {
 		}
 		return false;
 	}
+	// Returns index of x if it is present in arr[] or return -1
+	public static int getBinarySearchString(String[] arr,String find)
+	{
+		int start=0; 
+		int end=arr.length-1;
+		while(start<=end)
+		{
+			//finding mid element
+			int mid=(start+end)/2;
+			//comparing the index mid value and holding value 
+			int comp=find.compareTo(arr[mid]);
+			//if comp value is equal to 0 key value found
+			if(comp==0)
+			{
+				return mid;
+			}
+			//if comp value is less than 0 key value end value is mid-1
+			else if(comp<0)
+			{
+				end=mid-1;
+			}
+			else
+			{
+				//if comp value is greater than 0 key value start value is mid+1
+				start=mid+1;
+			}
+		}
+		//if key value not found return -1
+		return -1;
+	}
+	// Returns index of key if it present or return -1 
+	public static int getBinarySearchInt(int[] sortedArray,int key, int low,int high) 
+	{
+		//initial index value
+		int index=Integer.MAX_VALUE;
 
-}
+		while (low<=high) 
+		{
+			//finding mid element
+			int mid=(low+high)/2;
+			//if array mid value is less than key value end value is mid+1
+			if(sortedArray[mid]<key)
+			{
+				low=mid+1;
+			}
+			//if array mid value is greater than key value end value is mid-1
+			else if(sortedArray[mid]>key)
+			{
+				high=mid-1;
+			}
+			//if array mid value is equal to key mid value is equal to index and break come out of the loop 
+			else if(sortedArray[mid]==key)
+			{
+				index=mid;
+				break;
+			}
+		}
+		return index;
+	}
+	//This is for  Insertion Sort method
+	public static void getInsertionSortInt(int[] array)
+	{
+		int n=array.length-1;
+		for (int j=1;j<=n;j++)
+		{
+			int key=array[j];
+			int i=j-1;
+			while((i>-1)&&(array[i]>key))
+			{
+				array[i+1]=array [i];
+				i--;
+			}
+			array[i+1]=key;
+		}
+		//for printing the Sorted array values
+		System.out.print("Sorted Elements is:"+Arrays.toString(array));
+	}
+	//This is for  Insertion Sort method for Strings
+	public static void getInsertionSortString(String[] array)
+	{
+		int n=array.length-1;
+		for (int j=1;j<=n;j++)
+		{
+			String key=array[j];
+			int i=j-1;
+			while((i>-1)&&(array[i].compareTo(key)>0))
+			{
+				array[i+1]=array[i];
+				i--;
+			}
+			array[i+1]=key;
+		}
+		System.out.println("Sorted elements is:"+Arrays.toString(array));
+
+	}
+	//This is for Buuble Sort Integer method
+	public static void getBubbleSortInt(int[] array)
+	{
+		 int n=array.length;
+	        for(int i=0;i<n-1;i++)
+	        {
+	            for(int j=0;j<n-i-1;j++)
+	            {
+	                if (array[j]>array[j+1])
+	                {
+	                    int temp = array[j];
+	                    array[j] = array[j+1];
+	                    array[j+1] = temp;
+	                }
+	            }
+	        }
+		System.out.println("The Sorted elements are:"+Arrays.toString(array));
+	}
+
+	//This is for Buuble Sort String method
+	public static void getBubbleSortString(String[] array)
+	{
+		for(int i=1;i<array.length;i++)
+		{
+			String temp="";
+			if(array[i-1].compareTo(array[i])>0)
+			{
+				temp=array[i-1];
+				array[i-1]=array[i];
+				array[i]=temp;
+			}
+		}
+		System.out.println("The Sorted elements are:"+Arrays.toString(array));
+	}
+	//TemperatureConversion from celsius to fahrenheit
+	public static void getTemperatureConversion(double number,int check)
+	{
+		        if(check==1)
+		        {
+				double celsius=(5.0*(number-32.0))/9.0;
+				System.out.println(number+"F is same as "+celsius+"C");
+		        }
+		        else
+		        {
+		        double fahrenheit=((number*9.0/5.0)+32);
+		        System.out.println(number+"C is same as "+fahrenheit+"F");
+		        }
+		   
+	}
+	//Method for merge Sort Integer
+	public static int[] mergeSort(int[] a,int n) {
+		if(n<2)
+		{
+			return a;
+		}
+		int mid=n/2;
+		int[] l=new int[mid];
+		int[] r=new int[n-mid];
+
+		for(int i=0;i<mid;i++) 
+		{
+			l[i]=a[i];
+		}
+		for(int i=mid;i<n;i++)
+		{
+			r[i-mid]=a[i];
+		}
+		mergeSort(l,mid);
+		mergeSort(r,n-mid);
+		merge(a,l,r,mid,n-mid);
+		return a;
+	
+	}
+	public static void merge(int[] a,int[] l,int[] r,int left,int right)
+	{
+		int i=0,j=0,k=0;
+		while(i<left&&j<right)
+		{
+			if (l[i]<=r[j])
+			{
+				a[k++]=l[i++];
+			}
+			else {
+				a[k++]=r[j++];
+			}
+		}
+		while(i<left)
+		{
+			a[k++]=l[i++];
+		}
+		while(j<right)
+		{
+			a[k++]=r[j++];
+		}
+		
+	}
+
+   /* public static void mergeSortString(String[] names) {
+        if (names.length>2) {
+            String[] left = new String[names.length/2];
+            String[] right = new String[names.length/ 2];
+
+            for (int i=0;i<left.length;i++)
+            {
+                left[i]=names[i];
+            }
+
+            for (int i=0;i<right.length;i++)
+            {
+                right[i]=names[i+names.length/2];
+            }
+
+            mergeSortString(left);
+            mergeSortString(right);
+            mergeString(names,left,right);
+        }
+    }
+
+    public static void mergeString(String[] names, String[] left,String[] right)
+    {
+        int a=0;
+        int b=0;
+        for (int i=0;i<names.length;i++)
+        {
+            if (b >=right.length || (a < left.length && left[a].compareToIgnoreCase(right[b]) < 0)) {
+                names[i] = left[a];
+                a++;
+            } else {
+                names[i] = right[b];
+                b++;
+            }
+        }
+    }*/
+	//For payment salary method
+	public static void getMonthlySalary(double p,int y,double R)
+	{
+		int month=12*y;
+		double r=R/(12*100);
+		double power=Math.pow((1+r),-month);
+		double payment=((p*month)/(1-power));
+		System.out.println("Monthly payment is "+payment);
+	}
+
+} 
+
 
