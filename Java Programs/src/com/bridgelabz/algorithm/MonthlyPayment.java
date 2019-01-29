@@ -11,7 +11,7 @@ import com.bridgelabz.Utility.Utility;
  *  O/P     : printing calculated monthly salary
  *  @author  BridgeLabz/punithhr
  *  @version 1.0
- *  @since   24-01-2019
+ *  @since   28-01-2019
  *******************************************************************************/
 public class MonthlyPayment {
 

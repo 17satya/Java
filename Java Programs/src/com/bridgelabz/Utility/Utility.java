@@ -1,10 +1,9 @@
 package com.bridgelabz.Utility;
 
 import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Scanner;
 import java.util.TreeSet;
 /******************************************************************************
@@ -14,7 +13,7 @@ import java.util.TreeSet;
  *  @since   23-01-2019
  *******************************************************************************/
 public class Utility {
-	
+
 	static Scanner sc1= new Scanner(System.in);
 	//Getting the user String values inputs by user using scanner
 	public static String getString()
@@ -272,19 +271,19 @@ public class Utility {
 	//This is for Buuble Sort Integer method
 	public static void getBubbleSortInt(int[] array)
 	{
-		 int n=array.length;
-	        for(int i=0;i<n-1;i++)
-	        {
-	            for(int j=0;j<n-i-1;j++)
-	            {
-	                if (array[j]>array[j+1])
-	                {
-	                    int temp = array[j];
-	                    array[j] = array[j+1];
-	                    array[j+1] = temp;
-	                }
-	            }
-	        }
+		int n=array.length;
+		for(int i=0;i<n-1;i++)
+		{
+			for(int j=0;j<n-i-1;j++)
+			{
+				if (array[j]>array[j+1])
+				{
+					int temp = array[j];
+					array[j] = array[j+1];
+					array[j+1] = temp;
+				}
+			}
+		}
 		System.out.println("The Sorted elements are:"+Arrays.toString(array));
 	}
 
@@ -306,17 +305,17 @@ public class Utility {
 	//TemperatureConversion from celsius to fahrenheit
 	public static void getTemperatureConversion(double number,int check)
 	{
-		        if(check==1)
-		        {
-				double celsius=(5.0*(number-32.0))/9.0;
-				System.out.println(number+"F is same as "+celsius+"C");
-		        }
-		        else
-		        {
-		        double fahrenheit=((number*9.0/5.0)+32);
-		        System.out.println(number+"C is same as "+fahrenheit+"F");
-		        }
-		   
+		if(check==1)
+		{
+			double celsius=(5.0*(number-32.0))/9.0;
+			System.out.println(number+"F is same as "+celsius+"C");
+		}
+		else
+		{
+			double fahrenheit=((number*9.0/5.0)+32);
+			System.out.println(number+"C is same as "+fahrenheit+"F");
+		}
+
 	}
 	//Method for merge Sort Integer
 	public static int[] mergeSort(int[] a,int n) {
@@ -340,7 +339,7 @@ public class Utility {
 		mergeSort(r,n-mid);
 		merge(a,l,r,mid,n-mid);
 		return a;
-	
+
 	}
 	public static void merge(int[] a,int[] l,int[] r,int left,int right)
 	{
@@ -363,10 +362,10 @@ public class Utility {
 		{
 			a[k++]=r[j++];
 		}
-		
+
 	}
 
-   /* public static void mergeSortString(String[] names) {
+	/* public static void mergeSortString(String[] names) {
         if (names.length>2) {
             String[] left = new String[names.length/2];
             String[] right = new String[names.length/ 2];
@@ -407,11 +406,86 @@ public class Utility {
 	{
 		int month=12*y;
 		double r=R/(12*100);
+		//powering the denominator value as per the formula
 		double power=Math.pow((1+r),-month);
+		//Applied the formula
 		double payment=((p*month)/(1-power));
+		//
 		System.out.println("Monthly payment is "+payment);
-	}
 
-} 
+	}
+	//Find sqrt using of the Newton method
+	public static double getSqrtNewtons(double num)
+	{
+		double epsilon=1e-15;
+		double t=num;			
+		while(Math.abs(t-num/t)>epsilon*t)
+		{
+			t=(num/t+t)/2.0;
+		}
+		return t;
+	}
+	//to get the note counts of a Vending machine
+	public static void getNoteCount(int amount,int[] array)
+	{
+		int notes=0;//per note count
+		int totalcount=0;//for total number of counts
+		for(int i=array.length-1;i>=0;i--)
+		{
+
+			if(amount/array[i]>=1)
+			{
+				int count=(int)Math.floor(amount/array[i]);
+				notes=notes+count;
+				//printing the per count notes value and count
+				System.out.println("The number of count of note "+array[i]+ " is "+count+" Notes");
+				amount=amount%array[i];
+				totalcount++;//total number of counts increment
+			}
+
+		}
+		System.out.println("Total number of counts are :"+totalcount);
+
+	}
+	//Static method to find the day
+	public static int getDayOfWeek(int month,int date,int year) 
+	{			
+		year=year-(14-month)/12;;
+		int x=year+(year/4)-year/100+year/400;
+		month=month+12*((14-month)/12)-2;
+		date=(date+x+31*month/12)%7;
+		return date;
+	} 
+	//static method to find binary digits
+	public static String getToBinary(int number)
+	{
+		int rem;
+		String str="";
+		int num=number;
+		while(num>0)
+		{
+			rem=num%2;
+			str+=rem;
+			num=num/2;
+		}
+		return str;
+	}
+	//SwapNibbles
+	public static int getSwapNibbles(int decimal) 
+	{ 
+		return ((decimal&0x0F)<<4|(decimal&0xF0)>>4); 
+	} 
+	//powerOf two
+	//logic to find the power of 2
+	public static String getPowerOf2(int pownumber)
+	{ 
+		String result="";
+		for(int i=1;i<=pownumber;i++)
+		{
+			result+=(i*2)+" ";
+		}
+		return result;
+	} 
+}
 
 

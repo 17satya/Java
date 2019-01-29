@@ -7,7 +7,7 @@ import com.bridgelabz.Utility.Utility;
  *  O/P		:Print given two Strings are Anagram or not
  *  @author  BridgeLabz/punithhr
  *  @version 1.0
- *  @since   23-01-2019
+ *  @since   27-01-2019
  *******************************************************************************/
 public class Anagram {
 
