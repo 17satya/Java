@@ -21,6 +21,12 @@ public class Utility {
 		String s=sc1.next();
 		return s;
 	}
+	//Getting the user line of string inputs by user using scanner
+	public static String getStringLine()
+	{
+		String s=sc1.nextLine();
+		return s;
+	}
 	//Getting the user int number inputs by user using scanner
 	public static int getInt()
 	{
@@ -317,90 +323,81 @@ public class Utility {
 		}
 
 	}
-	//Method for merge Sort Integer
-	public static int[] mergeSort(int[] a,int n) {
-		if(n<2)
-		{
-			return a;
-		}
-		int mid=n/2;
-		int[] l=new int[mid];
-		int[] r=new int[n-mid];
-
-		for(int i=0;i<mid;i++) 
-		{
-			l[i]=a[i];
-		}
-		for(int i=mid;i<n;i++)
-		{
-			r[i-mid]=a[i];
-		}
-		mergeSort(l,mid);
-		mergeSort(r,n-mid);
-		merge(a,l,r,mid,n-mid);
-		return a;
-
-	}
-	public static void merge(int[] a,int[] l,int[] r,int left,int right)
-	{
-		int i=0,j=0,k=0;
-		while(i<left&&j<right)
-		{
-			if (l[i]<=r[j])
+	//Merge  Sort for String
+		public static String[] mergeSort(String[] array) {
+			String [] result=new String[array.length];
+			if (array.length==1)
 			{
-				a[k++]=l[i++];
+				result=array;
+			} 
+			else
+			{
+				int mid=array.length/2;
+				String[] left=null; 
+				String[] right=null;
+				//for array even length
+				if((array.length%2)==0)
+				{
+					left=new String[array.length/2];
+					right=new String[array.length/2];
+				}
+				//for array odd length
+				else
+				{ 
+					left=new String[array.length/2];
+					right=new String[(array.length/2)+1];
+				}
+				int x=0;
+				int y=0;
+				for( ;x<mid;x++)
+				{
+					left[x]=array[x];
+				}
+				for( ;x<array.length;x++)
+				{
+					right[y++]=array[x];
+				}
+				left=mergeSort(left);
+				right=mergeSort(right);
+				result=mergeArray(left,right);
 			}
-			else {
-				a[k++]=r[j++];
-			}
-		}
-		while(i<left)
-		{
-			a[k++]=l[i++];
-		}
-		while(j<right)
-		{
-			a[k++]=r[j++];
-		}
-
+			return result;
 	}
-
-	/* public static void mergeSortString(String[] names) {
-        if (names.length>2) {
-            String[] left = new String[names.length/2];
-            String[] right = new String[names.length/ 2];
-
-            for (int i=0;i<left.length;i++)
-            {
-                left[i]=names[i];
-            }
-
-            for (int i=0;i<right.length;i++)
-            {
-                right[i]=names[i+names.length/2];
-            }
-
-            mergeSortString(left);
-            mergeSortString(right);
-            mergeString(names,left,right);
-        }
-    }
-
-    public static void mergeString(String[] names, String[] left,String[] right)
-    {
-        int a=0;
-        int b=0;
-        for (int i=0;i<names.length;i++)
-        {
-            if (b >=right.length||(a < left.length && left[a].compareToIgnoreCase(right[b]) < 0)) {
-                names[i] = left[a];
-                a++;
-            } else {
-                names[i] = right[b];
-                b++;
-            }
-        }
-    }*/
+		
+	public static String[] mergeArray(String[] left,String[] right)
+	{
+		String[] merged=new String[left.length+right.length];
+		int lIndex=0;
+		int rIndex=0;
+		int mIndex=0;
+		int comp=0;
+		while(lIndex<left.length||rIndex<right.length)
+		{
+			if(lIndex==left.length){
+				merged[mIndex++]=right[rIndex++];
+			} 
+			else if(rIndex==right.length)
+			{
+				merged[mIndex++]=left[lIndex++];
+			}
+			else
+			{  
+				comp=left[lIndex].compareTo(right[rIndex]);
+				if(comp>0)
+				{
+					merged[mIndex++]=right[rIndex++];
+				}
+				else if(comp<0)
+				{
+					merged[mIndex++]=left[lIndex++];
+				} else { 
+					merged[mIndex++]=left[lIndex++];
+				}
+			}   
+		}
+		return merged;
+}
+	
 	//For payment salary method
 	public static void getMonthlySalary(double p,int y,double R)
 	{

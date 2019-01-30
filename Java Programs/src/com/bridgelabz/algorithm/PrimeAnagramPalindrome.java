@@ -1,6 +1,7 @@
 package com.bridgelabz.algorithm;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import com.bridgelabz.Utility.Utility;
 /******************************************************************************
@@ -18,9 +19,10 @@ public class PrimeAnagramPalindrome {
 	public static void main(String[] args) {
 		//Getting prime numbers from Utility class
 		ArrayList primenumlist=Utility.getPrimeNumbers(1000);
+		Collections.sort(primenumlist);
 		//Printing the prime anagram palindrome values
-		System.out.println("The prime Anagram palidrome values till 1000 are:"+Utility.getPrimeAnagramPalindrome(primenumlist));
-
+		System.out.println("the Prime anagram plaidrome numbers till 1000 are "+Utility.getPrimeAnagramPalindrome(primenumlist));
+	
 	}
 
 }

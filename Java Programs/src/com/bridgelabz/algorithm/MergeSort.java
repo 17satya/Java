@@ -1,29 +1,20 @@
 package com.bridgelabz.algorithm;
 
-import java.util.Arrays;
-
 import com.bridgelabz.Utility.Utility;
 
 public class MergeSort {
 	
 	public static void main(String[] args) {
-		int[] actual={ 5, 1, 6, 2, 3, 4 };
-		int[] res=Utility.mergeSort(actual,actual.length);
-		if(res.length==actual.length)
-		{
-			System.out.println(Arrays.toString(res));
-		}
-		/*  String[] ClassOne = { "Kring", "Panda", "Soliel", "Darryl", "Chan", "Matang", "Jollibee.", "Inasal" };
-	        String[] names = new String[ClassOne.length];
-
-	        Utility.mergeSortString(ClassOne);
-	        Utility.mergeSortString(names);
+		System.out.println("Enetr the line of words");
+		String line=Utility.getStringLine();
+		String[] words=line.split(" ");
+		String[] sorted=Utility.mergeSort(words);
+		System.out.println("The Sorted values of string are :");
 	        //Arrays.sort(names);
-
-	        for (String ClassThree:names)
+	        for (String sort:sorted)
 	        {
-	            System.out.println(ClassThree);
-	        }*/
+	            System.out.println(sort);
+	        }
 	}
 
 }

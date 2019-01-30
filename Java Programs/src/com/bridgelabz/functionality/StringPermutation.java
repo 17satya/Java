@@ -9,7 +9,7 @@ public class StringPermutation {
 			ch[j]=temp;
 		}
 		//Recursive function to generate all permutations of a String
-		private static void permutations(char[] ch, int index)
+		private static void permutations(char[] ch,int index)
 		{
 			if(index==ch.length-1) {
 				System.out.println(String.valueOf(ch));
