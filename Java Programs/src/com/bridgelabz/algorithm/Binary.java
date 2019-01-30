@@ -22,28 +22,25 @@ public class Binary {
 	System.out.print("The Binary digits for "+number+" number is:");
 	String str=Utility.getToBinary(number);
 	String string2="";
-	boolean flag=false;
 	for(int i=str.length()-1;i>=0;i--)
     {
     string2+=str.charAt(i);
     }
 	System.out.println(string2);
 	int binary=Integer.parseInt(string2);
+	//passing the number to swap the binary numbers
 	int swapbinary=Utility.getSwapNibbles(binary);
-	//System.out.println("The swapnibbles binary values are: "+swapbinary);
-	String power2=Utility.getPowerOf2(swapbinary);
-	String[] power2array=power2.split(" ");
-	for(String s:power2array)
+	//Printing swapped binary
+	System.out.println("The swapnibbles binary values are: "+swapbinary);
+	boolean power2=Utility.getPowerOf2(swapbinary);
+	if(power2)
 	{
-		if(s.equals(String.valueOf(swapbinary)))
-		{
+		
 			System.out.println("The swapped nibble is power of two "+swapbinary);
-			flag=true;
-		}
 	}
-	if(flag==false)
+	else
 	{
-	System.out.println("The swapped nibble is not power of two "+swapbinary);
+			System.out.println("The swapped nibble is not power of two "+swapbinary);
 	}
 	}
 

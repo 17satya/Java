@@ -18,8 +18,7 @@ public class PowerOf2 {
 	//Validating the user input is greater than 31 and 0 
 		if(pownumber>0&&pownumber<31)
 		{
-			System.out.println("The power of 2 till "+pownumber+" are:");
-			System.out.println(Utility.getPowerOf2(pownumber));
+			System.out.print("Given number "+pownumber+" is powerof2 : "+Utility.getPowerOf2(pownumber));
 		}
 	else
 		//Displaying the error message to the user by validation

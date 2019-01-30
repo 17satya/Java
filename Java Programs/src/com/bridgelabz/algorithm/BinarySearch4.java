@@ -47,7 +47,7 @@ public class BinarySearch4  {
 		int high=arr.length-1; 
 		int low=0;
 		int key=10;
-		int res=Utility.getBinarySearchInt(intarr,10,low,high);
+		int res=Utility.getBinarySearchInt(intarr,key,low,high);
 		sa.start();
 		if (res==-1) 
 			System.out.println("Integer element not present"); 

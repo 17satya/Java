@@ -1,7 +1,7 @@
 package com.bridgelabz.functionality;
 
-
 import com.bridgelabz.Utility.Utility;
+
 /******************************************************************************
  *  Purpose :To calculate the percentage of tail and head by number of flip Coin
  *  I/P     :The number of times to Flip Coin(Ensuring the number is positive)

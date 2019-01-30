@@ -392,7 +392,7 @@ public class Utility {
         int b=0;
         for (int i=0;i<names.length;i++)
         {
-            if (b >=right.length || (a < left.length && left[a].compareToIgnoreCase(right[b]) < 0)) {
+            if (b >=right.length||(a < left.length && left[a].compareToIgnoreCase(right[b]) < 0)) {
                 names[i] = left[a];
                 a++;
             } else {
@@ -477,14 +477,9 @@ public class Utility {
 	} 
 	//powerOf two
 	//logic to find the power of 2
-	public static String getPowerOf2(int pownumber)
+	public static boolean getPowerOf2(int pownumber)
 	{ 
-		String result="";
-		for(int i=1;i<=pownumber;i++)
-		{
-			result+=(i*2)+" ";
-		}
-		return result;
+		return (int)(Math.ceil(Math.log(pownumber)/Math.log(2)))==(int)(Math.floor(Math.log(pownumber)/Math.log(2)));
 	} 
 }
 
