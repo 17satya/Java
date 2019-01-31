@@ -27,12 +27,12 @@ public class LeapYear {
         	if((yearname%4==0)||((yearname%100==0)&&(yearname%400==0)))
         	{
         		//Displaying a reasult
-        		System.out.println(+yearname+" year is a leap year");
+        		System.out.println(yearname+" year is a leap year");
         	}
         	else
         	{
         		//Displaying the result
-        		System.out.println(+yearname+" year is not a leap year");
+        		System.out.println(yearname+" year is not a leap year");
         	}
         }
         else
