@@ -13,6 +13,8 @@ import com.bridgelabz.Utility.Utility;
 public class LeapYear {
 
 	public static void main(String[] args) {
+		try
+		{
 		System.out.println("Enter the year");
 		//taking the User input 
         String year=Utility.getString();
@@ -22,7 +24,7 @@ public class LeapYear {
         	//Parsing the String value to  int number
         	int yearname=Integer.parseInt(year);
         	//Logic to find weather it is leap year or not
-        	if(((yearname%4==0)||(yearname%100==0))&&(yearname%400==0))
+        	if((yearname%4==0)||((yearname%100==0)&&(yearname%400==0)))
         	{
         		//Displaying a reasult
         		System.out.println(+yearname+" year is a leap year");
@@ -38,5 +40,10 @@ public class LeapYear {
         System.out.println("Enter the correct year like 2010");
 
         }
+		}
+		catch(NumberFormatException e)
+		{
+			System.out.println("Enter the correct year in numbers");
+		}
 	}
 }

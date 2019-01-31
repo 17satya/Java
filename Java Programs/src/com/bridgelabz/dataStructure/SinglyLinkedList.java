@@ -5,7 +5,7 @@ public class SinglyLinkedList<T> implements List<T> {
 	private Node<T> first;
 	private Node<T> last;
 	private int size;
-	private int pos=0;
+	private int pos=size-1;
 	
 	@Override
 	public boolean isEmpty() {
@@ -133,13 +133,27 @@ public class SinglyLinkedList<T> implements List<T> {
 	}
 	@Override
 	public void insert(int pos,T item) {
-		
-		
+		Node<T> n=new Node<T>(item);
+		Node<T> temp=first;
+		Node<T> prev=null;
+		int find=0;
+		while(temp!=null)
+		{
+			find++;
+			if(find==pos)
+			{
+				n.next=temp.next;
+				temp.next=n;
+				size++;
+
+			}
+		}
 	}
-	
+
+
 	@Override
 	public List<T> list() {
-		
+
 		return this;
 	}
 	@Override

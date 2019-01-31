@@ -14,7 +14,9 @@ public class TestSinglyLinkedList {
 		System.out.println("popped element"+sll.pop());
 		System.out.println("the sll size is"+sll.size());
 		sll.print();
-		System.out.println(sll.list().toString());
+		sll.insert(2,10);
+		sll.print();
+		
 	}
 
 }

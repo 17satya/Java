@@ -10,7 +10,7 @@ public class StringPermutation {
 		}
 		//Recursive function to generate all permutations of a String
 		private static void permutations(char[] ch,int index)
-		{
+		{ 
 			if(index==ch.length-1) {
 				System.out.println(String.valueOf(ch));
 			}
@@ -19,8 +19,11 @@ public class StringPermutation {
 				swap(ch,index,i);
 				permutations(ch,index+1);
 				swap(ch,index,i);
+				
 			}
+			
 		}
+		
 
 		// generate all permutations of a String in Java
 		public static void main(String[] args)
